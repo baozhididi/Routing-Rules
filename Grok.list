@@ -1,0 +1,14 @@
+# name=Grok / Grok Bot 规则
+# Grok / Grok Bot Rules
+# Grok 网页/App/API，含登录、控制台、文档、下载页 x.ai/bot
+DOMAIN-SUFFIX,grok.com
+DOMAIN-SUFFIX,x.ai
+# Grok Bot 官网域名，含 mail.grokbot.com 邮箱
+DOMAIN-SUFFIX,grokbot.com
+# Grok Bot 登录走 Cursor 账号，如已有 Cursor 规则可删掉这一行
+DOMAIN-SUFFIX,cursor.com
+# X 账号登录 / 在 X 里用 Grok（含 @bot、图片、短链）
+DOMAIN-SUFFIX,x.com
+DOMAIN-SUFFIX,twitter.com
+DOMAIN-SUFFIX,twimg.com
+DOMAIN-SUFFIX,t.co
