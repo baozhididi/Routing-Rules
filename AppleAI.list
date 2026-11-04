@@ -1,0 +1,35 @@
+# name=Apple AI / Siri ChatGPT 规则
+# Apple AI / Siri ChatGPT Rules
+# Loon 导入时自选代理组，必须选美国节点组，不要选香港节点或自动（自动切到香港会失败）
+# 必须放在 Apple DIRECT / 17.0.0.0/8 直连规则之前，否则会被直连抢先，Siri 通、ChatGPT 仍报错
+# 来源：Apple 官方 101555（Apple 智能、Siri 和搜索、私有云计算）+ 社区 AppleIntelligence 列表，针对 iOS 26.1 补全
+# Siri 与搜索
+DOMAIN,api-siri-prod.apple.com
+DOMAIN,guzzoni.apple.com
+DOMAIN-SUFFIX,siri.apple.com
+DOMAIN-SUFFIX,smoot.apple.com
+DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
+DOMAIN-SUFFIX,ls.apple.com
+DOMAIN-SUFFIX,apps.mzstatic.com
+DOMAIN-KEYWORD,siri
+# Private Cloud Compute / Apple 智能扩展（Apple 官方 101555）
+DOMAIN-SUFFIX,apple-relay.apple.com
+DOMAIN-SUFFIX,apple-relay.cloudflare.com
+DOMAIN-SUFFIX,apple-relay.fastly-edge.com
+DOMAIN-SUFFIX,apple-relay.akamaized.net
+DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net
+DOMAIN-SUFFIX,cp4.cloudflare.com
+# iCloud 网关 / Mask 中继鉴权
+DOMAIN-SUFFIX,gateway.icloud.com
+DOMAIN-SUFFIX,apple-cloudkit.com
+DOMAIN-SUFFIX,mask.icloud.com
+DOMAIN-SUFFIX,mask-h2.icloud.com
+DOMAIN-SUFFIX,mask-api.icloud.com
+DOMAIN-SUFFIX,mask.apple-dns.net
+DOMAIN-SUFFIX,mask-api.fe.apple-dns.net
+DOMAIN-SUFFIX,mask-t.apple-dns.net
+# ChatGPT 扩展（调用与登录，Siri 扩展可不登录账号使用）
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
