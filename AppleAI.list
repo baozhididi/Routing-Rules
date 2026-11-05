@@ -33,3 +33,14 @@ DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
+# Siri AI (iOS 27) 补充，来源 byx020119/Shadowrocket-Siri siri3.list（2026-11-06 合并，仅新增原文件没有的域名，其余 siri3 域名已在上面覆盖）
+DOMAIN,seed.siri.apple.com
+DOMAIN,seed-sequoia.siri.apple.com
+DOMAIN,seed-swallow.siri.apple.com
+DOMAIN-SUFFIX,siri.com
+DOMAIN,probe.icloud.com
+DOMAIN,metrics.icloud.com
+DOMAIN,apple-carry-relay.cloudflare.com
+DOMAIN,mask-api.fe2.apple-dns.net
+DOMAIN-KEYWORD,apple-relay
+DOMAIN-KEYWORD,apple-intelligence
