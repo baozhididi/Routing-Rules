@@ -44,3 +44,22 @@ DOMAIN,apple-carry-relay.cloudflare.com
 DOMAIN,mask-api.fe2.apple-dns.net
 DOMAIN-KEYWORD,apple-relay
 DOMAIN-KEYWORD,apple-intelligence
+# 鉴权 / 地区检测补充，来源 Apple 官方 101555 + RocM301/Apple-Rule + iRingo（2026-11-06 合并；其中 configuration.ls.apple.com 已被上面的 ls.apple.com 后缀覆盖，此处显式列出仅作明确）
+DOMAIN,wps.apple.com
+DOMAIN,pong.icloud.com
+DOMAIN,configuration.ls.apple.com
+DOMAIN,gs-loc.apple.com
+DOMAIN,gsa.apple.com
+DOMAIN,account.apple.com
+DOMAIN,idmsa.apple.com
+DOMAIN,appleid.cdn-apple.com
+DOMAIN,setup.icloud.com
+# ChatGPT CDN / API 补充，来源 dler-io/Rules AI Suite.list（2026-11-06 合并）
+DOMAIN-SUFFIX,chat.com
+DOMAIN-SUFFIX,oaistatsig.com
+DOMAIN,cdn.openaimerge.com
+DOMAIN,chat.openai.com.cdn.cloudflare.net
+DOMAIN,openaiapi-site.azureedge.net
+DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+DOMAIN,openaicomproductionae4b.blob.core.windows.net
+DOMAIN,production-openaicom-storage.azureedge.net
