@@ -3,12 +3,12 @@
 # Loon 导入时自选代理组，必须选美国节点组，不要选香港节点或自动（自动切到香港会失败）
 # 必须放在 Apple DIRECT / 17.0.0.0/8 直连规则之前，否则会被直连抢先，Siri 通、ChatGPT 仍报错
 # 来源：Apple 官方 101555（Apple 智能、Siri 和搜索、私有云计算）+ 社区 AppleIntelligence 列表，针对 iOS 26.1 补全
+# 2026-11-09 去冗余：删 6 条已被后缀覆盖的规则，匹配行为不变（gspe1-ssl.ls.apple.com 被 ls.apple.com 覆盖；apple-relay.mask.apple-dns.net 被 mask.apple-dns.net 覆盖；seed.siri.apple.com、seed-sequoia.siri.apple.com、seed-swallow.siri.apple.com 被 siri.apple.com 覆盖；configuration.ls.apple.com 被 ls.apple.com 覆盖）
 # Siri 与搜索
 DOMAIN,api-siri-prod.apple.com
 DOMAIN,guzzoni.apple.com
 DOMAIN-SUFFIX,siri.apple.com
 DOMAIN-SUFFIX,smoot.apple.com
-DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
 DOMAIN-SUFFIX,ls.apple.com
 DOMAIN-SUFFIX,apps.mzstatic.com
 DOMAIN-KEYWORD,siri
@@ -17,7 +17,6 @@ DOMAIN-SUFFIX,apple-relay.apple.com
 DOMAIN-SUFFIX,apple-relay.cloudflare.com
 DOMAIN-SUFFIX,apple-relay.fastly-edge.com
 DOMAIN-SUFFIX,apple-relay.akamaized.net
-DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net
 DOMAIN-SUFFIX,cp4.cloudflare.com
 # iCloud 网关 / Mask 中继鉴权
 DOMAIN-SUFFIX,gateway.icloud.com
@@ -34,9 +33,6 @@ DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 # Siri AI (iOS 27) 补充，来源 byx020119/Shadowrocket-Siri siri3.list（2026-11-06 合并，仅新增原文件没有的域名，其余 siri3 域名已在上面覆盖）
-DOMAIN,seed.siri.apple.com
-DOMAIN,seed-sequoia.siri.apple.com
-DOMAIN,seed-swallow.siri.apple.com
 DOMAIN-SUFFIX,siri.com
 DOMAIN,probe.icloud.com
 DOMAIN,metrics.icloud.com
@@ -44,10 +40,9 @@ DOMAIN,apple-carry-relay.cloudflare.com
 DOMAIN,mask-api.fe2.apple-dns.net
 DOMAIN-KEYWORD,apple-relay
 DOMAIN-KEYWORD,apple-intelligence
-# 鉴权 / 地区检测补充，来源 Apple 官方 101555 + RocM301/Apple-Rule + iRingo（2026-11-06 合并；其中 configuration.ls.apple.com 已被上面的 ls.apple.com 后缀覆盖，此处显式列出仅作明确）
+# 鉴权 / 地区检测补充，来源 Apple 官方 101555 + RocM301/Apple-Rule + iRingo（2026-11-06 合并）
 DOMAIN,wps.apple.com
 DOMAIN,pong.icloud.com
-DOMAIN,configuration.ls.apple.com
 DOMAIN,gs-loc.apple.com
 DOMAIN,gsa.apple.com
 DOMAIN,account.apple.com
