@@ -4,51 +4,30 @@
 # 必须放在 Apple DIRECT / 17.0.0.0/8 直连规则之前，否则会被直连抢先，Siri 通、ChatGPT 仍报错
 # 来源：Apple 官方 101555（Apple 智能、Siri 和搜索、私有云计算）+ 社区 AppleIntelligence 列表，针对 iOS 26.1 补全
 # 2026-11-09 去冗余：删 6 条已被后缀覆盖的规则，匹配行为不变（gspe1-ssl.ls.apple.com 被 ls.apple.com 覆盖；apple-relay.mask.apple-dns.net 被 mask.apple-dns.net 覆盖；seed.siri.apple.com、seed-sequoia.siri.apple.com、seed-swallow.siri.apple.com 被 siri.apple.com 覆盖；configuration.ls.apple.com 被 ls.apple.com 覆盖）
+# 2026-11-09 剥离：共用组已移出到 iCloud.list（iCloud/CloudKit、私密中继、Apple ID 鉴权、定位、iCloud 诊断）与 AppStore.list（apps.mzstatic.com），本表只留 Siri / Apple Intelligence / ChatGPT；gspe1-ssl.ls.apple.com 改回显式 DOMAIN（ls.apple.com 后缀已移出）
 # Siri 与搜索
 DOMAIN,api-siri-prod.apple.com
 DOMAIN,guzzoni.apple.com
 DOMAIN-SUFFIX,siri.apple.com
 DOMAIN-SUFFIX,smoot.apple.com
-DOMAIN-SUFFIX,ls.apple.com
-DOMAIN-SUFFIX,apps.mzstatic.com
+DOMAIN-SUFFIX,siri.com
 DOMAIN-KEYWORD,siri
+# 地区资格校验
+DOMAIN,gspe1-ssl.ls.apple.com
 # Private Cloud Compute / Apple 智能扩展（Apple 官方 101555）
 DOMAIN-SUFFIX,apple-relay.apple.com
 DOMAIN-SUFFIX,apple-relay.cloudflare.com
 DOMAIN-SUFFIX,apple-relay.fastly-edge.com
 DOMAIN-SUFFIX,apple-relay.akamaized.net
 DOMAIN-SUFFIX,cp4.cloudflare.com
-# iCloud 网关 / Mask 中继鉴权
-DOMAIN-SUFFIX,gateway.icloud.com
-DOMAIN-SUFFIX,apple-cloudkit.com
-DOMAIN-SUFFIX,mask.icloud.com
-DOMAIN-SUFFIX,mask-h2.icloud.com
-DOMAIN-SUFFIX,mask-api.icloud.com
-DOMAIN-SUFFIX,mask.apple-dns.net
-DOMAIN-SUFFIX,mask-api.fe.apple-dns.net
-DOMAIN-SUFFIX,mask-t.apple-dns.net
+DOMAIN,apple-carry-relay.cloudflare.com
+DOMAIN-KEYWORD,apple-relay
+DOMAIN-KEYWORD,apple-intelligence
 # ChatGPT 扩展（调用与登录，Siri 扩展可不登录账号使用）
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
-# Siri AI (iOS 27) 补充，来源 byx020119/Shadowrocket-Siri siri3.list（2026-11-06 合并，仅新增原文件没有的域名，其余 siri3 域名已在上面覆盖）
-DOMAIN-SUFFIX,siri.com
-DOMAIN,probe.icloud.com
-DOMAIN,metrics.icloud.com
-DOMAIN,apple-carry-relay.cloudflare.com
-DOMAIN,mask-api.fe2.apple-dns.net
-DOMAIN-KEYWORD,apple-relay
-DOMAIN-KEYWORD,apple-intelligence
-# 鉴权 / 地区检测补充，来源 Apple 官方 101555 + RocM301/Apple-Rule + iRingo（2026-11-06 合并）
-DOMAIN,wps.apple.com
-DOMAIN,pong.icloud.com
-DOMAIN,gs-loc.apple.com
-DOMAIN,gsa.apple.com
-DOMAIN,account.apple.com
-DOMAIN,idmsa.apple.com
-DOMAIN,appleid.cdn-apple.com
-DOMAIN,setup.icloud.com
 # ChatGPT CDN / API 补充，来源 dler-io/Rules AI Suite.list（2026-11-06 合并）
 DOMAIN-SUFFIX,chat.com
 DOMAIN-SUFFIX,oaistatsig.com
@@ -58,3 +37,5 @@ DOMAIN,openaiapi-site.azureedge.net
 DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 DOMAIN,openaicomproductionae4b.blob.core.windows.net
 DOMAIN,production-openaicom-storage.azureedge.net
+# 其他：wps.apple.com（来源 RocM301/Apple-Rule Apple-AI.list，用途未确认，暂留本表）
+DOMAIN,wps.apple.com
