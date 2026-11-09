@@ -1,0 +1,5 @@
+# name=App Store 规则
+# App Store Rules
+# 从 AppleAI.list 剥离（2026-11-09）：App Store 内容分发
+# Loon 导入时自选策略，与 AppleAI.list 分开订阅
+DOMAIN-SUFFIX,apps.mzstatic.com
