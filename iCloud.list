@@ -1,0 +1,28 @@
+# name=iCloud 规则
+# iCloud Rules
+# 从 AppleAI.list 剥离的共用组（2026-11-09）：iCloud/CloudKit、私密中继、Apple ID 鉴权、定位服务、iCloud 诊断
+# Loon 导入时自选策略，与 AppleAI.list 分开订阅
+# iCloud / CloudKit
+DOMAIN-SUFFIX,gateway.icloud.com
+DOMAIN-SUFFIX,apple-cloudkit.com
+# 私密中继 / Mask
+DOMAIN-SUFFIX,mask.icloud.com
+DOMAIN-SUFFIX,mask-h2.icloud.com
+DOMAIN-SUFFIX,mask-api.icloud.com
+DOMAIN-SUFFIX,mask.apple-dns.net
+DOMAIN-SUFFIX,mask-api.fe.apple-dns.net
+DOMAIN-SUFFIX,mask-t.apple-dns.net
+DOMAIN,mask-api.fe2.apple-dns.net
+# iCloud 诊断 / 连接测试
+DOMAIN,probe.icloud.com
+DOMAIN,metrics.icloud.com
+DOMAIN,pong.icloud.com
+# Apple ID 鉴权
+DOMAIN,gsa.apple.com
+DOMAIN,account.apple.com
+DOMAIN,idmsa.apple.com
+DOMAIN,appleid.cdn-apple.com
+DOMAIN,setup.icloud.com
+# 定位服务
+DOMAIN-SUFFIX,ls.apple.com
+DOMAIN,gs-loc.apple.com
