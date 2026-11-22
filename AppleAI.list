@@ -39,3 +39,7 @@ DOMAIN,openaicomproductionae4b.blob.core.windows.net
 DOMAIN,production-openaicom-storage.azureedge.net
 # 其他：wps.apple.com（来源 RocM301/Apple-Rule Apple-AI.list，用途未确认，暂留本表）
 DOMAIN,wps.apple.com
+# Siri AI 补充（2026-11-23，来源 linux.do 社区 siriai 规则）
+DOMAIN-SUFFIX,nlp.apple.com
+DOMAIN-SUFFIX,prod.dss.apple.com
+DOMAIN-SUFFIX,apple-native-relay.apple.com
