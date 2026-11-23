@@ -26,6 +26,5 @@ DOMAIN,setup.icloud.com
 # 定位服务
 DOMAIN-SUFFIX,ls.apple.com
 DOMAIN,gs-loc.apple.com
-# Apple Intelligence 模型下载 / 软件更新目录（2026-11-23，Loon 08:10 请求记录：sgsin8.icloud-content.com 与 gdmf.apple.com 未命中任何规则，掉 FINAL,自动 SG-05 超时）
-DOMAIN-SUFFIX,icloud-content.com
+# 软件更新目录（2026-11-23，Loon 08:10 请求记录：gdmf.apple.com 未命中任何规则，掉 FINAL,自动 SG-05 超时；icloud-content.com 同日已撤掉，避免 iCloud 相册内容下载也走美国代理）
 DOMAIN,gdmf.apple.com
